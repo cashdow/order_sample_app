@@ -1,4 +1,3 @@
-import logo from "./logo.svg";
 import "./App.css";
 import { useEffect, useState, useRef } from "react";
 import axios from "axios";
@@ -8,17 +7,13 @@ import Modal from "./Modal";
 import {
   Box,
   Button,
-  Card,
   FormLabel,
   Radio,
   RadioGroup,
   FormControl,
   FormControlLabel,
-  CardContent,
-  CardHeader,
   Divider,
   TextField,
-  MenuItem,
   Typography,
   makeStyles,
   AppBar,
@@ -27,17 +22,18 @@ import {
 
 const Target =
   "http://gift-message-order-exaxdx2.s3-website.ap-northeast-2.amazonaws.com";
-// const Target = "http://192.168.0.84:3000";
 const GMP_NAME = "GMP-Order";
 const GMP_API = "https://api.gift-message.com";
-// "https://67kg7fwdki.execute-api.ap-northeast-2.amazonaws.com/Prod";
-const ORDER_HANDLER = "missBong";
-const ful_username = "flower2";
 const USER_TYPE = {
   FULFILLMENT: "fulfillment",
   ORDERING: "ordering",
 };
-const PASSWORD_ful = "1234";
+
+/// 가맹점 및 주문 받을 계정
+const ful_username = "flower2";
+
+/// 미스봉 계정
+const ORDER_HANDLER = "missBong";
 const PASSWORD_order = "1111";
 
 const useStyles = makeStyles((theme) => ({
@@ -141,14 +137,16 @@ function App() {
     /**
      * query params
      *
-     * id : ORDER HANDLER
-     * receiver_name
-     * receiver_phone
-     * sender_name
-     * sender_phone
-     *
+     * orderId : ORDER HANDLER
+     * receiverName
+     * receiverPhone
+     * senderName
+     * senderPhone
+     * giftName
+     * receiverAddress1
+     * receiverAddress2
+     * receiverZip
      */
-    // const params = `?orderId=${preorderId}&receiverName=강찬&receiverPhone=01025920183&senderName=소희&senderPhone=01025920183&giftName=꽃 선물1호`;
     const params = `?orderId=${preorderId}&receiverName=${message.receiverName}&receiverPhone=${message.receiverPhone}&senderName=${message.senderName}&senderPhone=${message.senderPhone}&giftName=${message.giftName}&receiverAddress1=${message.receiverAddress1}&receiverAddress2=${message.receiverAddress2}&receiverZip=${message.receiverZip}`;
 
     const url = Target + params;
@@ -253,6 +251,7 @@ function App() {
     }
     return undefined;
   };
+
   const createUser = async () => {
     const result = await axios.post(GMP_API + "/create-user", {
       userName: ORDER_HANDLER,

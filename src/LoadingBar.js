@@ -1,14 +1,8 @@
 import React from "react";
-import { CircularProgress, makeStyles } from "@material-ui/core";
+import { CircularProgress } from "@material-ui/core";
 import ReactModal from "react-modal";
 
-const useStyles = makeStyles((theme) => ({
-  root: {},
-}));
-
 function LoadingBar({ isOpen, ...rest }) {
-  const classes = useStyles();
-
   return (
     <ReactModal
       isOpen={isOpen}
