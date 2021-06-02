@@ -306,7 +306,6 @@ function App() {
     setMessage(msg);
   };
   const handleAddressComplete = (data) => {
-    // console.log("[App] handleComplete data = ", data);
     setMessage({
       ...message,
       receiverAddress1: data.address,
@@ -320,7 +319,7 @@ function App() {
       <AppBar position="static" color="default" className={classes.appbar}>
         <Toolbar>
           <Typography variant="h6" className={classes.title}>
-            미스봉 주문 화면
+            주문 화면
           </Typography>
         </Toolbar>
       </AppBar>
