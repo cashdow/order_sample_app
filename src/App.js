@@ -90,9 +90,9 @@ function App() {
   const [addressModal, setModal] = useState(false);
   const [message, setMessage] = useState({
     senderName: "강찬",
-    senderPhone: "01025920183",
+    senderPhone: "123123123",
     receiverName: "희선",
-    receiverPhone: "01025920183",
+    receiverPhone: "123123123",
     giftName: "꽃바구니 1호",
     receiverAddress1: "경기도 성남시 수정구 창업로 42",
     receiverAddress2: "판교 제2테크노밸리 경기기업성장센터 416호",
