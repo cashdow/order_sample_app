@@ -267,12 +267,6 @@ function App() {
       const res = await axios.post(GMP_API + "/prepare-order", {
         orderingHandler: ORDER_HANDLER,
       });
-      // axios
-      //   .post(GMP_API + "/create-user", {
-      //     userName: USERNAME,
-      //     userType: FULFILLMENT,
-      //     password: PASSWORD,
-      //   })
       console.log("[App] getPreorderld / res.data = ", res.data);
       if (res && res.data && res.data.result === "OK") {
         const preorderId = res.data.orderId;
