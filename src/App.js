@@ -142,12 +142,8 @@ function App() {
      * receiverPhone
      * senderName
      * senderPhone
-     * giftName
-     * receiverAddress1
-     * receiverAddress2
-     * receiverZip
      */
-    const params = `?orderId=${preorderId}&receiverName=${message.receiverName}&receiverPhone=${message.receiverPhone}&senderName=${message.senderName}&senderPhone=${message.senderPhone}&giftName=${message.giftName}&receiverAddress1=${message.receiverAddress1}&receiverAddress2=${message.receiverAddress2}&receiverZip=${message.receiverZip}`;
+    const params = `?orderId=${preorderId}&receiverName=${message.receiverName}&receiverPhone=${message.receiverPhone}&senderName=${message.senderName}&senderPhone=${message.senderPhone}`;
 
     const url = Target + params;
 
@@ -207,9 +203,9 @@ function App() {
           giftName: query.giftName,
           senderName: query.senderName,
           receiverName: query.receiverName,
-          receiverAddress1: query.receiverAddress1,
-          receiverAddress2: query.receiverAddress2,
-          receiverZip: query.receiverZip,
+          receiverAddress1: message.receiverAddress1,
+          receiverAddress2: message.receiverAddress2,
+          receiverZip: message.receiverZip,
         },
         fulfillmentHandler: ful_username,
       };
