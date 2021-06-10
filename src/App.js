@@ -200,7 +200,7 @@ function App() {
       const params = {
         orderId: orderId.current,
         orderDetail: {
-          giftName: query.giftName,
+          giftName: message.giftName,
           senderName: query.senderName,
           receiverName: query.receiverName,
           receiverAddress1: message.receiverAddress1,
